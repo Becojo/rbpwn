@@ -15,7 +15,7 @@ module Rbpwn::Crypto
   def pkcs7_unpad(str)
     n = str[-1].ord
     if str[-n..-1] != str[-1] * n
-      raise 'Pad padding'
+      raise 'Bad padding'
     end
 
     str[0...-n]
